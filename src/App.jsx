@@ -47,7 +47,7 @@ function App() {
   // Compare choices
   useEffect(() => {
     if (ch1 && ch2) {
-      setDisable(true)
+      setDisable(true);
       if (ch1.img === ch2.img) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -71,7 +71,7 @@ function App() {
   const reset = () => {
     setCh1(null);
     setCh2(null);
-    setDisable(false)
+    setDisable(false);
   };
 
   // Preload images on mount
@@ -82,8 +82,13 @@ function App() {
 
   return (
     <>
-      <div className="max-w-[860px] my-[40px] mx-auto">
-        {/* <button onClick={shuffle}>Click</button> */}
+      <div className="max-w-[860px] my-[40px] mx-auto flex flex-col items-center">
+        <button
+          className="  px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+          onClick={shuffle}
+        >
+          Shuffle Cards
+        </button>
         <div className="card-grid grid mt-[40px]  grid-cols-4 gap-[10px]">
           {cards.map((card) => (
             <Kard
