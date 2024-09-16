@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-
+import cover from "./assets/card.jpg";
 import c1 from "./assets/1.png";
 import c2 from "./assets/2.png";
 import c3 from "./assets/3.png";
@@ -78,6 +78,8 @@ function App() {
   useEffect(() => {
     preloadImages(cardImages);
     shuffle();
+    const img = new Image();
+    img.src = cover;
   }, []);
 
   return (
